@@ -4,7 +4,7 @@ function counter() {
   let seconds = 0;
   setInterval(() => {
     seconds += 1;
-    document.getElementById('app').innerHTML = `<p>You have been here for ${seconds} seconds.</p>`;
+    document.getElementById('app').innerHTML = `<p>It has taken you ${seconds} seconds to solve this problem.</p>`;
   }, 1000);
 }
 
