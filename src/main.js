@@ -10,6 +10,7 @@ function counter() {
 
 const calculator = {
   displayValue: '0',
+  firstOperand: null,
   
 };
 
