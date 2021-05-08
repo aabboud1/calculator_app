@@ -19,4 +19,5 @@ const calculator = {
   operator: null,
 };
 
-counter();
+// counter();
+calculator();
