@@ -8,4 +8,9 @@ function counter() {
   }, 1000);
 }
 
+const calculator = {
+  displayValue: '0',
+  
+};
+
 counter();
