@@ -19,5 +19,11 @@ const calculator = {
   operator: null,
 };
 
+function updateDisplay() {
+  
+  const display = document.querySelector('.calculator-screen');
+
+}
+
 // counter();
 calculator();
