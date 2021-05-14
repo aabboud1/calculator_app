@@ -20,9 +20,10 @@ const calculator = {
 };
 
 function updateDisplay() {
-  
+  // select the element with class of `calculator-screen`
   const display = document.querySelector('.calculator-screen');
-
+  // update the value of the element with the contents of `displayValue`
+  display.value = calculator.displayValue
 }
 
 // counter();
