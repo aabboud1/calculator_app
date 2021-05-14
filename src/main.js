@@ -26,5 +26,11 @@ function updateDisplay() {
   display.value = calculator.displayValue
 }
 
+const keys = document.querySelector('.calculator-keys');
+keys.addEventListener('click', (event) => {
+  const target = event;
+  
+})
+
 // counter();
 calculator();
