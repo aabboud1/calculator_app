@@ -36,6 +36,11 @@ keys.addEventListener('click', (event) => {
   if(!target.matches('button')) {
     return;
   }
+  //check if the button is an operator
+  if(target.classList.contains('operator')) {
+    console.log('operator', target.value)
+  }
+
 })
 
 // counter();
