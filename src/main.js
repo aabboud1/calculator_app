@@ -40,9 +40,15 @@ keys.addEventListener('click', (event) => {
   if(target.classList.contains('operator')) {
     console.log('operator', target.value)
   }
-
+  //check if the button is a decimal
   if (target.classList.contains('decimal')) {
     console.log('decimal', target.value);
+    return;
+  }
+
+  //check if button is clear all
+  if (target.classList.contains('all-clear')) {
+    console.log('clear', target.value);
     return;
   }
 
