@@ -52,7 +52,13 @@ keys.addEventListener('click', (event) => {
     return;
   }
 
+  console.log('digit', target.value);
+
 })
+
+function inputDigit(digit) {
+  
+}
 
 // counter();
 calculator();
