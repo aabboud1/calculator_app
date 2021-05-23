@@ -57,7 +57,7 @@ keys.addEventListener('click', (event) => {
 })
 
 function inputDigit(digit) {
-  
+  const { displayValue } = calculator;
 }
 
 // counter();
