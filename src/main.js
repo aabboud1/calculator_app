@@ -46,7 +46,8 @@ keys.addEventListener('click', (event) => {
   }
   //check if the button is an operator
   if(target.classList.contains('operator')) {
-    console.log('operator', target.value)
+    handleOperator(target.value);
+    updateDisplay();
   }
   //check if the button is a decimal
   if (target.classList.contains('decimal')) {
@@ -80,7 +81,7 @@ function handleOperator (nextOperator) {
 
   //parseFloat is used to string to floating number we are converting displayValue
   const inputValue = parseFloat(displayValue);
-
+  //Check to see if first op and is null and inputval is not a NAN value
   if (firstOperand === null && !isNan(inputValue)) {
     //used to updated firstOperand property
     calculator.firstOperand = inputValue;
