@@ -50,7 +50,8 @@ keys.addEventListener('click', (event) => {
   }
   //check if the button is a decimal
   if (target.classList.contains('decimal')) {
-    console.log('decimal', target.value);
+    inputDecimal(target.value);
+    updateDisplay();
     return;
   }
 
