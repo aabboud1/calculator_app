@@ -74,5 +74,23 @@ function inputDecimal (dot) {
   }
 }
 
+function handleOperator (nextOperator) {
+  // Destructureing the properties on the calculator object
+  const {firstOperand, displayValue, operator} = calculator
+
+  //parseFloat is used to string to floating number we are converting displayValue
+  const inputValue = parseFloat(displayValue);
+
+  if (firstOperand === null && !isNan(inputValue)) {
+    //used to updated firstOperand property
+    calculator.firstOperand = inputValue;
+  }
+
+  calculator.waitingForSecondOperand = true;
+  calculator.operator = nextOperator;
+
+
+}
+
 // counter();
 calculator();
