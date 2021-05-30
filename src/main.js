@@ -65,6 +65,13 @@ keys.addEventListener('click', (event) => {
 
 })
 
+function inputDecimal (dot) {
+  //check
+  if (!calculator.displayValue.includes(dot)) {
+    //append the dot
+    calculator.displayValue += dot;
+  }
+}
 
 // counter();
 calculator();
