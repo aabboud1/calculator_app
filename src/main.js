@@ -37,7 +37,7 @@ updateDisplay();
 const keys = document.querySelector('.calculator-keys');
 keys.addEventListener('click', (event) => {
    // Access the clicked element
-  const target = event;
+  const {target} = event;
 
   // Check if the clicked element is a button.
   // If not, exit from the function
