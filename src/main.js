@@ -25,6 +25,23 @@ function inputDigit(digit) {
    calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
 }
 
+
+function handleOperator (nextOperator) {
+  // Destructureing the properties on the calculator object
+  const {firstOperand, displayValue, operator} = calculator
+  
+  //parseFloat is used to string to floating number we are converting displayValue
+  const inputValue = parseFloat(displayValue);
+  //Check to see if first op and is null and inputval is not a NAN value
+  if (firstOperand === null && !isNaN(inputValue)) {
+    //used to updated firstOperand property
+    calculator.firstOperand = inputValue;
+  }
+  
+  calculator.waitingForSecondOperand = true;
+  calculator.operator = nextOperator;
+}
+
 function updateDisplay() {
   // select the element with class of `calculator-screen`
   const display = document.querySelector('.calculator-screen');
@@ -48,6 +65,7 @@ keys.addEventListener('click', (event) => {
   if(target.classList.contains('operator')) {
     handleOperator(target.value);
     updateDisplay();
+    return;
   }
   //check if the button is a decimal
   if (target.classList.contains('decimal')) {
@@ -75,23 +93,6 @@ function inputDecimal (dot) {
   }
 }
 
-function handleOperator (nextOperator) {
-  // Destructureing the properties on the calculator object
-  const {firstOperand, displayValue, operator} = calculator
-
-  //parseFloat is used to string to floating number we are converting displayValue
-  const inputValue = parseFloat(displayValue);
-  //Check to see if first op and is null and inputval is not a NAN value
-  if (firstOperand === null && !isNan(inputValue)) {
-    //used to updated firstOperand property
-    calculator.firstOperand = inputValue;
-  }
-
-  calculator.waitingForSecondOperand = true;
-  calculator.operator = nextOperator;
-
-
-}
 
 // counter();
 calculator();
