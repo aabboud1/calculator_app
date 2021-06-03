@@ -43,6 +43,10 @@ function handleOperator (nextOperator) {
   if (firstOperand === null && !isNaN(inputValue)) {
     //used to updated firstOperand property
     calculator.firstOperand = inputValue;
+  }else if (operator) {
+    const result = calculate(firstOperand, inputValue, operator);
+    calculator.displayValue = String(result);
+    calculator.firstOperand = result;
   }
   
   calculator.waitingForSecondOperand = true;
