@@ -41,7 +41,8 @@ function handleOperator (nextOperator) {
   const inputValue = parseFloat(displayValue);
 
   if (operator && calculator.waitingForSecondOperand)  {
-   
+    calculator.operator = nextOperator;
+    console.log(calculator);
     return;
   }
   //Check to see if first op and is null and inputval is not a NAN value
