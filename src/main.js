@@ -72,6 +72,10 @@ function calcuate (firstOperand, secondOperand, operator) {
   return secondOperand
 }
 
+function resetCalculator() {
+  
+}
+
 function updateDisplay() {
   // select the element with class of `calculator-screen`
   const display = document.querySelector('.calculator-screen');
