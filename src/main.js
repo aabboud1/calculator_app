@@ -39,6 +39,11 @@ function handleOperator (nextOperator) {
   
   //parseFloat is used to string to floating number we are converting displayValue
   const inputValue = parseFloat(displayValue);
+
+  if (operator && calculator.waitingForSecondOperand)  {
+   
+    return;
+  }
   //Check to see if first op and is null and inputval is not a NAN value
   if (firstOperand === null && !isNaN(inputValue)) {
     //used to updated firstOperand property
