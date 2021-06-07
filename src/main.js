@@ -114,7 +114,8 @@ keys.addEventListener('click', (event) => {
 
   //check if button is clear all
   if (target.classList.contains('all-clear')) {
-    console.log('clear', target.value);
+    resetCalculator();
+    updateDisplay();    
     return;
   }
 
