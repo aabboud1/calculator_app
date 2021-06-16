@@ -59,7 +59,7 @@ function handleOperator (nextOperator) {
   calculator.operator = nextOperator;
 }
 
-function calcuate (firstOperand, secondOperand, operator) {
+function calculate (firstOperand, secondOperand, operator) {
   if (operator === '+') {
     return firstOperand + secondOperand;
   }else if (operator === '-') {
@@ -136,4 +136,4 @@ function inputDecimal (dot) {
 
 
 // counter();
-calculator();
+// calculator();
