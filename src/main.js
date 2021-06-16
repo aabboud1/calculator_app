@@ -93,6 +93,21 @@ const keys = document.querySelector('.calculator-keys');
 keys.addEventListener('click', (event) => {
    // Access the clicked element
   const {target} = event;
+  const {value} = target;
+
+  if (target.matches('button')) {
+    return;
+  }
+
+  switch (value) {
+    case '+':
+    case '-':
+    case '*':
+    case '/': 
+    case '=':
+      handleOperator(value);
+      break;
+  }
 
   // Check if the clicked element is a button.
   // If not, exit from the function
