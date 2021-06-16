@@ -90,12 +90,10 @@ function updateDisplay() {
 updateDisplay();
 
 const keys = document.querySelector('.calculator-keys');
-keys.addEventListener('click', (event) => {
-   // Access the clicked element
-  const {target} = event;
-  const {value} = target;
-
-  if (target.matches('button')) {
+keys.addEventListener('click', event => {
+  const { target } = event;
+  const { value } = target;
+  if (!target.matches('button')) {
     return;
   }
 
@@ -103,41 +101,25 @@ keys.addEventListener('click', (event) => {
     case '+':
     case '-':
     case '*':
-    case '/': 
+    case '/':
     case '=':
       handleOperator(value);
       break;
+    case '.':
+      inputDecimal(value);
+      break;
+    case 'all-clear':
+      resetCalculator();
+      break;
+    default:
+      // check if the key is an integer
+      if (Number.isInteger(parseFloat(value))) {
+        inputDigit(value);
+      }
   }
 
-  // Check if the clicked element is a button.
-  // If not, exit from the function
-  if(!target.matches('button')) {
-    return;
-  }
-  //check if the button is an operator
-  if(target.classList.contains('operator')) {
-    handleOperator(target.value);
-    updateDisplay();
-    return;
-  }
-  //check if the button is a decimal
-  if (target.classList.contains('decimal')) {
-    inputDecimal(target.value);
-    updateDisplay();
-    return;
-  }
-
-  //check if button is clear all
-  if (target.classList.contains('all-clear')) {
-    resetCalculator();
-    updateDisplay();    
-    return;
-  }
-
-  inputDigit(target.value);
   updateDisplay();
-
-})
+});
 
 function inputDecimal (dot) {
   if(calculator.waitingForSecondOperand === true) {
