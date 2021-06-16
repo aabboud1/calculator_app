@@ -125,6 +125,11 @@ keys.addEventListener('click', (event) => {
 })
 
 function inputDecimal (dot) {
+  if(calculator.waitingForSecondOperand === true) {
+    calculator.displayValue = '0.'
+    calculator.waitingForSecondOperand = false;
+    return
+  }
   //check
   if (!calculator.displayValue.includes(dot)) {
     //append the dot
