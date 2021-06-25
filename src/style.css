@@ -175,10 +175,12 @@ button:hover {
   background-color: #f0595f;
   border-color: #b0353a;
   color: #fff;
+  grid-area: 7 / 3 / 7 / 5;
 }
 
 .all-clear:hover {
   background-color: #f17377;
+  
 }
 
 .equal-sign {
@@ -186,7 +188,7 @@ button:hover {
   border-color: #337cac;
   color: #fff;
   height: 100%;
-  grid-area: 2 / 4 / 8 / 5;
+  grid-area: 2 / 4 / 7 / 5;
 }
 
 .equal-sign:hover {
